@@ -1,102 +1,302 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Lifestyle Theme</title>
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css"
-    />
-  </head>
-  <body>
-    <nav class="container-fluid">
-      <ul>
-        <li><strong>Lifestyle Vibes</strong></li>
-      </ul>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="#">Contact</a></li>
-        <li><a href="#" role="button">Subscribe</a></li>
-      </ul>
-    </nav>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Lifestyle Theme</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+  <style>
+    body {
+      background-color: #ffffff; /* White background */
+      color: #333333; /* Dark text for contrast */
+    }
+    .bg-custom-light {
+      background-color: #ffffff;
+      color: #333333;
+    }
+    .navbar, .footer-social-icons {
+      background-color: #e0f7fa; /* Baby blue background */
+    }
+    .navbar-brand, .nav-link {
+      font-weight: bold;
+      color: #060606; /* Darker baby blue */
+    }
+    .nav-link:hover {
+      color: #63afe9; /* Darker shade on hover */
+    }
+    .hero-section {
+      background: url("https://images.unsplash.com/photo-1514528924113-c419d0fa68ca?q=80&w=1528&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D") no-repeat center center;
+      background-size: cover;
+      padding: 80px 20px;
+      color: #ffffff;
+      text-align: center;
+      text-shadow: 1px 1px 8px rgba(255, 255, 255, 0.5);
+    }
+    .hero-section h1 {
+      font-size: 3.5rem;
+      font-weight: bold;
+      margin-bottom: 30px;
+    }
+    .carousel-item {
+      font-size: 1.5rem;
+      color: #ffffff;
+    }
+    .card {
+      position: relative;
+      overflow: hidden; /* Ensures overlay is contained */
+      transition: transform 0.3s ease; /* Smooth transition */
+    }
+    .card:hover {
+      transform: scale(1.05); /* Scale up effect */
+    }
+    .card-img-top {
+    height: 300px; /* Set a fixed height for the images */
+    object-fit: cover; /* Ensures the image covers the area without stretching */
+    transition: transform 0.3s ease; /* Smooth transition */
+    }
+    .card:hover .card-img-top {
+      transform: scale(1.1); /* Slight zoom on image */
+    }
+    .card-text-overlay {
+      position: absolute;
+      top: 30%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: #ffffff; /* White text */
+      font-size: 1.5rem;
+      font-weight: bold;
+      opacity: 0; /* Hidden by default */
+      transition: opacity 0.3s ease; /* Smooth transition */
+    }
+    .card:hover .card-text-overlay {
+      opacity: 1; /* Reveal text on hover */
+    }
+    .btn-primary {
+      background-color: #65696b;
+      border: none;
+    }
+    .btn-primary:hover {
+      background-color: #63afe9;
+    }
+    .custom-text-color {
+      color: #333333; /* Replace with your desired color */
+      font-weight: bold;
+      text-shadow: 1px 1px 8px #b3fcf9; /* Optional */
+    }
+    .testimonial {
+      background-color: #b2ebf2; /* Lighter baby blue for testimonials */
+      padding: 20px;
+      border-radius: 8px;
+      color: #333333;
+    }
+    .footer-social-icons a {
+      font-size: 1.5rem;
+      margin: 0 10px;
+      color: #0077c2;
+    }
+    .form-control:focus {
+      border-color: #0077c2;
+      box-shadow: 0 0 5px #65a4cb;
+    }
+    a.text-light:hover {
+      color: #0077c2;
+    }
+  </style>
+</head>
+<body class="bg-custom-light">
+  <!-- Light Navbar -->
+  <nav class="navbar navbar-expand-lg">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#"><strong>EasLife</strong></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html#contact">Contact</a></li>
+          <li class="nav-item"><a class="btn btn-primary" href="about.html#subscribe" role="button">Subscribe</a></li>
 
-    <main class="container">
-      <div class="grid">
-        <section>
-          <hgroup>
-            <h2>Welcome to the Lifestyle Hub</h2>
-            <h3>Explore trends, wellness, and living your best life</h3>
-          </hgroup>
-          <p>
-            Lifestyle is all about finding balance, embracing health, and living
-            in the moment. Whether you're into fitness, mindfulness, or just
-            looking to elevate your daily routines, you've come to the right
-            place.
-          </p>
-          <figure>
-            <img
-              src="https://images.unsplash.com/photo-1507919909716-c8262e491cde?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-              alt="Wellness lifestyle image from Unsplash"
-            />
-            <figcaption>
-              <a href="https://unsplash.com" target="_blank"
-                >Photo from Unsplash</a
-              >
-            </figcaption>
-          </figure>
-          <h3>Latest in Wellness</h3>
-          <p>
-            Discover the latest trends in wellness, from meditation techniques
-            to fitness tips that keep you grounded and healthy.
-          </p>
-          <h3>Explore Fashion & Trends</h3>
-          <p>
-            Stay ahead in fashion with insights into what's trending,
-            sustainable fashion tips, and more.
-          </p>
-        </section>
+        </ul>
       </div>
-    </main>
+    </div>
+  </nav>
 
-    <section aria-label="Subscribe example">
-      <div class="container">
-        <article>
-          <hgroup>
-            <h2>Join Our Community</h2>
-            <h3>Subscribe for the latest lifestyle updates</h3>
-          </hgroup>
-          <form class="grid">
-            <input
-              type="text"
-              id="firstname"
-              name="firstname"
-              placeholder="First Name"
-              aria-label="First Name"
-              required
-            />
-            <input
-              type="email"
-              id="email"
-              name="email"
-              placeholder="Email"
-              aria-label="Email"
-              required
-            />
-            <button type="submit" onclick="event.preventDefault()">
-              Subscribe
-            </button>
-          </form>
-        </article>
+  <!-- Hero Section with Carousel Text -->
+  <section class="hero-section">
+    <h1>Welcome to Your Lifestyle Guide</h1>
+    <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active"><p>Discover a world of wellness, style, and personal growth.</p></div>
+        <div class="carousel-item"><p>Elevate your daily routines with expert tips.</p></div>
+        <div class="carousel-item"><p>Embrace a balanced lifestyle with our guidance.</p></div>
+        <div class="carousel-item"><p>Find inspiration for a happier, healthier life.</p></div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <footer class="container">
-      <small
-        ><a href="#">Privacy Policy</a> •
-        <a href="#">Terms & Conditions</a></small
-      >
-    </footer>
-  </body>
+  <!-- Main Content -->
+  <main class="container my-5">
+    <div class="row">
+      <section class="col-md-12">
+        <div class="mb-4">
+          <h2>Welcome to EasLife</h2>
+          <h3 class="text-muted">Explore trends, wellness, and living your best life</h3>
+        </div>
+        <p class="custom-text-color">
+          Discover a world of wellness, style, and personal growth.
+        </p>
+        <!-- Automated Image Carousel -->
+  <!-- Automated Image Carousel -->
+  <div id="figureCarousel" class="carousel slide mb-4" data-bs-ride="carousel" data-bs-interval="2000">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="https://images.unsplash.com/photo-1507919909716-c8262e491cde?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="figure-img img-fluid rounded" alt="Wellness lifestyle image from Unsplash" style="width: 100%; height: 600px; object-fit: cover;" />
+        <figcaption class="figure-caption text-light">
+          <a href="https://unsplash.com" target="_blank" class="text-light">Photo from Unsplash</a>
+        </figcaption>
+      </div>
+      <div class="carousel-item">
+        <img src="https://images.unsplash.com/photo-1599058917212-d750089bc07e?q=80&w=1469&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="figure-img img-fluid rounded" alt="Wellness lifestyle image from Unsplash" style="width: 100%; height: 600px; object-fit: cover;" />
+        <figcaption class="figure-caption text-light">
+          <a href="https://unsplash.com" target="_blank" class="text-light">Photo from Unsplash</a>
+        </figcaption>
+      </div>
+      <div class="carousel-item">
+        <img src="https://images.unsplash.com/photo-1589363460779-cd717d2ed8fa?q=80&w=1632&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="figure-img img-fluid rounded" alt="Wellness lifestyle image from Unsplash" style="width: 100%; height: 600px; object-fit: cover;" />
+        <figcaption class="figure-caption text-light">
+          <a href="https://unsplash.com" target="_blank" class="text-light">Photo from Unsplash</a>
+        </figcaption>
+      </div>
+    </div>
+  </div>
+
+
+
+       <!-- Latest in Wellness Section -->
+<section class="mb-4">
+  <h3>Latest in Wellness</h3>
+  <div class="row">
+      <div class="col-md-4">
+          <div class="card">
+              <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?q=80&w=1598&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="card-img-top" alt="Wellness Trend 1" />
+              <div class="card-body">
+                  <h5 class="card-title">Mindfulness Techniques</h5>
+                  <p class="card-text">Explore techniques to enhance your mindfulness practice.</p>
+                  <div class="card-text-overlay">Mindfulness Techniques to help you set the mind for healthier life</div> <!-- Hidden text -->
+                  <a href="#" class="btn btn-primary">Learn More</a>
+              </div>
+          </div>
+      </div>
+      <div class="col-md-4">
+          <div class="card">
+              <img src="https://images.unsplash.com/photo-1684160244466-b89ef03b7638?q=80&w=1450&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="card-img-top" alt="Wellness Trend 2" />
+              <div class="card-body">
+                  <h5 class="card-title">Nutrition for Energy</h5>
+                  <p class="card-text">Discover how to fuel your body with energy-boosting foods.</p>
+                  <div class="card-text-overlay">Nutrition for Energy</div> <!-- Hidden text -->
+                  <a href="#" class="btn btn-primary">Learn More</a>
+              </div>
+          </div>
+      </div>
+      <div class="col-md-4">
+          <div class="card">
+              <img src="https://images.unsplash.com/photo-1585342565162-3704ff9b221d?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="card-img-top" alt="Wellness Trend 3" />
+              <div class="card-body">
+                  <h5 class="card-title">Home Workouts</h5>
+                  <p class="card-text">Effective workout routines you can do at home.</p>
+                  <div class="card-text-overlay">Home Workouts</div> <!-- Hidden text -->
+                  <a href="#" class="btn btn-primary">Learn More</a>
+              </div>
+          </div>
+      </div>
+  </div>
+</section>
+
+<!-- Explore Fashion & Trends Section -->
+<section class="mb-4">
+  <h3>Explore Fashion & Trends</h3>
+  <div class="row">
+      <div class="col-md-4">
+          <div class="card">
+              <img src="https://images.unsplash.com/photo-1675409173121-96fee9f91845?q=80&w=1528&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="card-img-top" alt="Fashion Trend 1" />
+              <div class="card-body">
+                  <h5 class="card-title">Seasonal Styles</h5>
+                  <p class="card-text">Stay updated with the latest seasonal styles.</p>
+                  <div class="card-text-overlay">Seasonal Styles</div> <!-- Hidden text -->
+                  <a href="#" class="btn btn-primary">Explore</a>
+              </div>
+          </div>
+      </div>
+      <div class="col-md-4">
+          <div class="card">
+              <img src="https://images.unsplash.com/photo-1591348278999-ee1d0c06ed7b?q=80&w=1480&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="card-img-top" alt="Fashion Trend 2" />
+              <div class="card-body">
+                  <h5 class="card-title">Accessories That Pop</h5>
+                  <p class="card-text">Add the perfect accessories to your wardrobe.</p>
+                  <div class="card-text-overlay">Accessories That Pop</div> <!-- Hidden text -->
+                  <a href="#" class="btn btn-primary">Explore</a>
+              </div>
+          </div>
+      </div>
+      <div class="col-md-4">
+          <div class="card">
+              <img src="https://images.unsplash.com/photo-1631050165089-6311e0d6c5f3?q=80&w=1576&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="card-img-top" alt="Fashion Trend 3" />
+              <div class="card-body">
+                  <h5 class="card-title">Sustainable Fashion</h5>
+                  <p class="card-text">Discover eco-friendly fashion choices.</p>
+                  <div class="card-text-overlay">Sustainable Fashion</div> <!-- Hidden text -->
+                  <a href="#" class="btn btn-primary">Explore</a>
+              </div>
+          </div>
+      </div>
+  </div>
+</section>
+
+<!-- Testimonials Section -->
+<section class="mb-4">
+  <h2>Testimonials</h2>
+  <div class="row">
+      <div class="col-md-4">
+          <div class="testimonial">
+              <p>"This website transformed my lifestyle!"</p>
+              <footer>- P.Diddy</footer>
+          </div>
+      </div>
+      <div class="col-md-4">
+          <div class="testimonial">
+              <p>"I found amazing tips to stay healthy, KIDS!"</p>
+              <footer>- Drake</footer>
+          </div>
+      </div>
+      <div class="col-md-4">
+          <div class="testimonial">
+              <p>"A wonderful resource for wellness inspiration, they not like us"</p>
+              <footer>- Kendrick</footer>
+          </div>
+      </div>
+  </div>
+</section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer mt-5">
+    <div class="container text-center">
+      <p><strong>Follow Us</strong></p>
+      <div class="footer-social-icons">
+        <a href="#"><i class="bi bi-facebook"></i></a>
+        <a href="#"><i class="bi bi-twitter"></i></a>
+        <a href="#"><i class="bi bi-instagram"></i></a>
+      </div>
+      <p>&copy; 2024 EasLife. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+  
+</body>
 </html>

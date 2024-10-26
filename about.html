@@ -1,105 +1,292 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>About Us - Lifestyle Vibes</title>
+    <title>About Us - EasLife</title>
     <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css"
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+        rel="stylesheet"
     />
-  </head>
-  <body>
-    <nav class="container-fluid">
-      <ul>
-        <li><strong>Lifestyle Vibes</strong></li>
-      </ul>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="#">Contact</a></li>
-        <li><a href="#" role="button">Subscribe</a></li>
-      </ul>
-    </nav>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Custom style for smaller avatar images */
+        .avatar-sm {
+            width: 200px;
+            height: 200px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
 
-    <main class="container">
-      <div class="grid">
-        <section>
-          <hgroup>
-            <h2>About Lifestyle Vibes</h2>
-            <h3>Our Story & Vision</h3>
-          </hgroup>
-          <p>
-            Lifestyle Vibes was created with a simple goal: to help people live
-            better, healthier, and more fulfilling lives. We believe that true
-            happiness comes from balance, mindfulness, and a deep connection to
-            the world around us.
-          </p>
-          <figure>
-            <img
-              src="https://images.unsplash.com/photo-1507919909716-c8262e491cde?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-              alt="Nature and lifestyle image from Unsplash"
-            />
-            <figcaption>
-              <a href="https://unsplash.com" target="_blank"
-                >Photo from Unsplash</a
-              >
-            </figcaption>
-          </figure>
-          <h3>Our Mission</h3>
-          <p>
-            Our mission is to inspire and empower individuals to live
-            consciously. We cover various aspects of life including wellness,
-            fitness, fashion, and mindfulness to help our audience elevate their
-            everyday experiences.
-          </p>
-          <h3>Meet the Team</h3>
-          <p>
-            Our team consists of wellness enthusiasts, fitness experts, and
-            lifestyle gurus. We're dedicated to bringing you the latest insights
-            and trends to help you live your best life.
-          </p>
-        </section>
-      </div>
-    </main>
+        .avatar-sm:hover {
+            transform: scale(1.2);
+            box-shadow: 0 8px 16px #63afe9;
+        }
 
-    <section aria-label="Subscribe example">
-      <div class="container">
-        <article>
-          <hgroup>
-            <h2>Stay in the Loop</h2>
-            <h3>Subscribe to Our Newsletter</h3>
-          </hgroup>
-          <form class="grid">
-            <input
-              type="text"
-              id="firstname"
-              name="firstname"
-              placeholder="First Name"
-              aria-label="First Name"
-              required
-            />
-            <input
-              type="email"
-              id="email"
-              name="email"
-              placeholder="Email"
-              aria-label="Email"
-              required
-            />
-            <button type="submit" onclick="event.preventDefault()">
-              Subscribe
-            </button>
-          </form>
-        </article>
-      </div>
-    </section>
+        /* Custom colors */
+        .navbar {
+            background-color: #d1edf0f7; /* Light background */
+        }
 
-    <footer class="container">
-      <small
-        ><a href="#">Privacy Policy</a> •
-        <a href="#">Terms & Conditions</a></small
-      >
-    </footer>
-  </body>
+        .navbar-brand,
+        .nav-link {
+            color: #060606;
+            font-weight: bold;
+        }
+
+        .nav-link:hover {
+            color: #63afe9; /* Darker shade on hover */
+        }
+
+        .btn-primary {
+            background-color: #6c757d; /* Gray color */
+            border-color: #6c757d;
+        }
+
+        .btn-primary:hover {
+            background-color: #63afe9; /* Darker shade on hover */
+            border-color: #63afe9;
+        }
+
+        .section-bg {
+            background-color: #f8f9fa;
+            padding: 30px;
+            border-radius: 8px;
+        }
+
+        h3 {
+            margin-top: 1.5rem;
+            font-weight: bold; /* Make the h3 elements bold */
+        }
+
+        /* Positioning for image */
+        figure {
+            position: relative;
+        }
+        .figure-caption {
+         margin-top: 15px; /* Adjust the value as needed */
+        }
+
+        .overlay-text {
+        position: absolute;
+        top: 20%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: white; /* Change text color as needed */
+        font-size: 50px; /* Adjust size as needed */
+        font-weight: bold; /* Make the text bold */
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Optional shadow for better readability */
+        z-index: 10; /* Ensure it's above the image */
+        }
+
+        .highlight {
+        color: #63afe9; /* Change to your desired color */
+        }
+    </style>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#"><strong>EasLife</strong></a>
+        <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+        >
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="about.html">About</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#contact">Contact</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link btn btn-primary text-white" href="#subscribe" role="button">Subscribe</a>
+              </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<main class="container my-5">
+    <div class="row">
+        <div class="col">
+            <section class="section-bg">
+                <div class="mb-4">
+                    <h2>About EasLife</h2>
+                    <h3><strong>Our Story & Vision</strong></h3>
+                </div>
+                <p>
+                    EasLife was created with a simple goal: to help people live
+                    better, healthier, and more fulfilling lives. We believe that true
+                    happiness comes from balance, mindfulness, and a deep connection to
+                    the world around us.
+                </p>
+                <figure class="figure d-flex align-items-center">
+                  <img
+                      src="https://images.unsplash.com/photo-1511632765486-a01980e01a18?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                      class="figure-img img-fluid rounded"
+                      alt="Nature and lifestyle image from Unsplash"
+                  />
+                  <div class="overlay-text d-flex align-items-center">
+                      <span class="me-2">Healthy</span>
+                      <span class="highlight">
+                          <div id="lifeCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="2000">
+                              <div class="carousel-inner">
+                                  <div class="carousel-item active">
+                                      <span>Life</span>
+                                  </div>
+                                  <div class="carousel-item">
+                                      <span>Minds</span>
+                                  </div>
+                              </div>
+                          </div>
+                      </span>
+                  </div>
+                  <figcaption class="figure-caption">
+                      <a href="https://unsplash.com" target="_blank">Photo from Unsplash</a>
+                  </figcaption>
+              </figure>
+              
+              
+                <h3><strong>Our Mission</strong></h3>
+                <p>
+                    Our mission is to inspire and empower individuals to live consciously and authentically. We believe that true wellness encompasses more than just physical health; it integrates emotional, mental, and spiritual well-being. By promoting holistic approaches, we strive to help our audience recognize their unique potential and cultivate habits that lead to a fulfilling lifestyle. We cover various aspects of life, including wellness, fitness, fashion, and mindfulness, to help our audience elevate their everyday experiences.
+                </p>
+                <p>
+                    We are dedicated to providing valuable content that resonates with our community, encouraging them to make informed decisions that positively impact their lives. Our vision includes creating a supportive platform where individuals can connect, share their journeys, and celebrate their achievements. By fostering a sense of community and belonging, we aim to cultivate a culture of positivity, resilience, and growth.
+                </p>
+                <p>
+                    At EasLife, we understand that every individual's journey is unique. Therefore, we tailor our resources, tips, and insights to meet diverse needs and preferences. Our ultimate goal is to equip our audience with the tools and knowledge necessary to thrive in all aspects of life, inspiring them to embrace a lifestyle that reflects their values and aspirations.
+                </p>
+
+                <h3><strong>Meet the Team</strong></h3>
+                <p>
+                    Our team consists of wellness enthusiasts, fitness experts, and
+                    lifestyle gurus. We're dedicated to bringing you the latest insights
+                    and trends to help you live your best life.
+                </p>
+
+                <!-- Team Avatars -->
+                <div class="row text-center my-4">
+                    <div class="col-md-4">
+                        <img
+                            src="img/dr.mehmet.jpg" 
+                            class="rounded-circle img-fluid avatar-sm"
+                            alt="Team member 1"
+                        />
+                        <p class="mt-2"><strong>Dr. Mehmet Oz, M.D.</strong></p>
+                        <p>Wellness Expert</p>
+                    </div>
+                    <div class="col-md-4">
+                        <img
+                            src="img/athleanx.jpg" 
+                            class="rounded-circle img-fluid avatar-sm"
+                            alt="Team member 2"
+                        />
+                        <p class="mt-2"><strong>Jeff "Athlean-X"</strong></p>
+                        <p>Fitness Coach</p>
+                    </div>
+                    <div class="col-md-4">
+                        <img
+                            src="img/nutr.jpg" 
+                            class="rounded-circle img-fluid avatar-sm"
+                            alt="Team member 3"
+                        />
+                        <p class="mt-2"><strong>Lisa Nutritionist</strong></p>
+                        <p>Nutrition Specialist</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+</main>
+
+<section class="container mb-5">
+    <div class="row">
+        <div class="col">
+           <article class="section-bg" id="contact">
+                <div class="mb-4">
+                    <h2><i class="fas fa-phone"></i> <strong>Contact Us</strong></h2>
+                    <p>If you have any questions or need assistance, feel free to reach out to us!</p>
+                </div>
+                <p>
+                    <strong>Email:</strong> support@EasLife.com
+                </p>
+                <p>
+                    <strong>Phone:</strong> +1 (234) 567-8900
+                </p>
+                <p>
+                    <strong>Address:</strong> 123 Wellness St, Healthy City, CA 12345
+                </p>
+            </article>
+        </div>
+    </div>
+</section>
+
+<section class="container mb-5">
+    <div class="row">
+        <div class="col">
+          <article class="section-bg" id="subscribe">
+
+                <div class="mb-4">
+                    <h2>Stay in the Loop</h2>
+                    <h3>Subscribe to Our Newsletter</h3>
+                </div>
+                <form class="row g-3">
+                    <div class="col-md-6">
+                        <input
+                            type="text"
+                            class="form-control"
+                            id="firstname"
+                            name="firstname"
+                            placeholder="First Name"
+                            required
+                        />
+                    </div>
+                    <div class="col-md-6">
+                        <input
+                            type="text"
+                            class="form-control"
+                            id="lastname"
+                            name="lastname"
+                            placeholder="Last Name"
+                            required
+                        />
+                    </div>
+                    <div class="col-md-12">
+                        <input
+                            type="email"
+                            class="form-control"
+                            id="email"
+                            name="email"
+                            placeholder="Email Address"
+                            required
+                        />
+                    </div>
+                    <div class="col-md-12">
+                        <button type="submit" class="btn btn-primary">Subscribe</button>
+                    </div>
+                </form>
+            </article>
+        </div>
+    </div>
+</section>
+
+<footer class="text-center py-4">
+    <p>© 2024 . All Rights Reserved.</p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+</body>
 </html>
